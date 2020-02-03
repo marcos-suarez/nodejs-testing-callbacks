@@ -18,7 +18,7 @@ function obterUsuario(callback) {
 function obterTelefone(idUsuario, callback){
     setTimeout( () => {
         return callback(null, {
-            telefone: '11954585443',
+            telefone: '11999999999',
             ddd: 11
         })
     }, 2000);
@@ -27,7 +27,7 @@ function obterTelefone(idUsuario, callback){
 function obterEndereco(idUsuario, callback){
     setTimeout(() => {
         return callback(null, {
-            rua: "Rua dos bobos",
+            rua: "Rua das abobrinhas",
             numero: 10
         })
     }, 2000);
@@ -40,17 +40,17 @@ function resolverUsuario(erro, usuario){
 obterUsuario(function resolverUsuario(error, usuario){
     // null || "" || 0 === false
     if (error){
-        console.error("DEU RUIM em USUARIO", error)
+        console.error("ERRO NO USUARIO", error)
         return;
     }   
     obterTelefone(usuario.id, function resolverTelefone(error1, telefone){
         if (error1){
-            console.error("DEU RUIM em TELEFONE", error)
+            console.error("ERRO NO TELEFONE", error)
             return;
         }    
         obterEndereco(usuario.id, function resolverEndereco(error2, endereco){
             if (error2){
-                console.error("DEU RUIM em ENDERECO", error)
+                console.error("ERRO NO ENDEREÇO", error)
                 return; 
         }
             console.log(`
